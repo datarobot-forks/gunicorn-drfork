@@ -4,8 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 # see https://packaging.python.org/en/latest/specifications/pyproject-toml/
-name = "gunicorn"
-authors = [{name = "Benoit Chesneau", email = "benoitc@gunicorn.org"}]
+name = "gunicorn-drfork"
 license = {text = "MIT"}
 description = "WSGI HTTP Server for UNIX"
 readme = "README.rst"
@@ -45,8 +44,8 @@ dynamic = ["version"]
 [project.urls]
 Homepage = "https://gunicorn.org"
 Documentation = "https://docs.gunicorn.org"
-"Issue tracker" = "https://github.com/benoitc/gunicorn/issues"
-"Source code" = "https://github.com/benoitc/gunicorn"
+"Issue tracker" = "https://github.com/datarobot-forks/gunicorn-drfork/issues"
+"Source code" = "https://github.com/datarobot-forks/gunicorn-drfork"
 Changelog = "https://docs.gunicorn.org/en/stable/news.html"
 
 [project.optional-dependencies]
