@@ -123,7 +123,7 @@ class ThreadWorker(base.Worker):
             # wait until socket is readable
             with self._lock:
                 self.poller.register(conn.sock, selectors.EVENT_READ,
-                                     partial(self.on_client_socket_readable, conn))
+                                     partial(self.reuse_connection, conn))
         except OSError as e:
             if e.errno not in (errno.EAGAIN, errno.ECONNABORTED,
                                errno.EWOULDBLOCK):
