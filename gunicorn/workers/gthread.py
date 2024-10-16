@@ -120,10 +120,8 @@ class ThreadWorker(base.Worker):
             conn = TConn(self.cfg, sock, client, server)
 
             self.nr_conns += 1
-            # wait until socket is readable
-            with self._lock:
-                self.poller.register(conn.sock, selectors.EVENT_READ,
-                                     partial(self.reuse_connection, conn))
+            # enqueue the job
+            self.enqueue_req(conn)
         except OSError as e:
             if e.errno not in (errno.EAGAIN, errno.ECONNABORTED,
                                errno.EWOULDBLOCK):
